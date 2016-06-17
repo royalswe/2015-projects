@@ -1,0 +1,25 @@
+<% provide(:title, 'Domains') %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        Domains
+      </h1>
+    </section>
+    <%= link_to "Add new domain", new_domain_path %>
+  </aside>
+
+  <div class="col-md-12">
+
+    <% @domains.each do |d| %>
+        <h2><%= d.domain_name %></h2>
+        <p><%= d.description %></p>
+        <p><strong>Api key:</strong> <%= d.authentication_token %></p>
+        Created <%= time_ago_in_words(d.created_at) %> ago
+        <p>
+          <%= link_to "Delete", d, :data => {:confirm => "Are you sure?"}, :method => :delete %>
+        </p>
+    <% end %>
+
+  </div>
+</div>

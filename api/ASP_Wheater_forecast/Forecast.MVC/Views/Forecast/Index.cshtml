@@ -1,0 +1,45 @@
+﻿@model Forecast.MVC.ViewModels.ForecastIndexViewModel
+
+
+@{
+    ViewBag.Title = "Weather locations";
+}
+
+
+<div class="main-search">
+
+    <div class="search-box form-group">
+        <h1>WeatherCheck</h1>
+
+        @Html.Partial("_FlashMessage")
+
+        @using (Html.BeginForm())
+        {
+            @*@Html.AntiForgeryToken()*@ // cant be used because token being cached.
+            @Html.ValidationSummary("", new { @class = "validation-error" })
+
+            @Html.EditorFor(m => m.CityName, new { htmlAttributes = new { @class = "form-control", maxLength = 50, required = "required", autofocus = "autofocus", placeholder ="Type desired location, ex London" } })
+
+            <button type="submit" class="btn btn-success">Search location</button>
+        }
+    </div>
+</div>
+
+<div id="search-results">
+    @if (Model != null && Model.HasCity)
+    {
+        <h3>Search result</h3>
+        foreach (var location in Model.Locations)
+        {
+            <p>
+                @location.Country @location.County
+                @Html.ActionLink(@location.City, "Weather", new { id= @location.LocationID})
+            </p>
+        }
+    }
+
+</div>
+
+<div id="local-cache" class="show-cache"></div>
+
+

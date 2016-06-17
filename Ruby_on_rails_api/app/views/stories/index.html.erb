@@ -1,0 +1,9 @@
+<% provide(:title, "Story list") %>
+
+<h1>My stories</h1>
+
+<% @stories.each do |story| %>
+  <h2><%= link_to story.title, story %></h2>
+<% end %>
+
+<%= link_to "create new story", new_story_path %>

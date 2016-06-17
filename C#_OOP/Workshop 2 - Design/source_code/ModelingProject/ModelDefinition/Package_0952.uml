@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="bbaaee35-f16b-41d4-a3db-7611acd6865c"
+  name="System"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="6aba0cf6-70e3-406b-9c14-2ed7fed95991"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2e8c9c7b-00b8-499b-9f73-5b18798cbcef"
+        LastKnownName="Resources"
+        LastKnownLocation="Package1_0952.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e7e4c03c-4c0d-4889-8ada-7eca87b44c9a"
+        LastKnownName="Globalization"
+        LastKnownLocation="Package2_0952.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ceacc4cd-bb84-47d1-9a45-ad13db709e9b"
+        LastKnownName="Xml"
+        LastKnownLocation="Package_1039.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="6e3e5ce6-0a03-43dd-a699-c18844fbadfc"
+        LastKnownName="Collections"
+        LastKnownLocation="Package2_1039.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

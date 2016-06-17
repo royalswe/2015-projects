@@ -1,0 +1,20 @@
+
+<li id="stories-<%= story.id %>">
+  <h3><%= story.title %></h3>
+  <p><%= story.description %></p>
+  <div class="tags">
+    <%=raw story.all_tags %>
+  </div>
+    <% if logged_in? %>
+      <% if current_user.admin? || current_user?(@user) %>
+        <p><%= link_to "Edit", edit_story_path(story) %> |
+         <%= link_to "Delete", story, :data => {:confirm => "Are you sure?"}, :method => :delete %>
+        </p>
+      <% end %>
+    <% end %>
+  
+
+  <span>
+    Posted <%= time_ago_in_words(story.created_at) %> ago.
+  </span>
+</li>

@@ -1,0 +1,22 @@
+<div ng-controller="mapController">
+
+   <ng-map default-style="true" zoom="3" center="59.339025, 18.065818">
+
+       <info-window id="InfoWindow" >
+           <div ng-non-bindable>
+                <h4 id="firstHeading">{{selectedPlace.title}}</h4>
+                <p class="info-window-text">{{selectedPlace.description}}</p>
+                <b>Tags:</b>
+                    <span data-ng-repeat="(key, value) in selectedPlace.tags">
+                        {{ value.name }}
+                    </span>
+
+                <p><b>Created: </b>{{selectedPlace.created_at.substring(0, 16)}}</p>
+           </div>
+       </info-window>
+
+       <marker data-ng-repeat="p in stories.storyList"
+               position="{{p.latitude}}, {{ p.longitude}}" title="{{p.title}}"  id="{{p.id}}"  on-click="showStory(event, p)">
+       </marker>
+   </ng-map>
+</div>

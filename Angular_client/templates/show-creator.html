@@ -1,0 +1,37 @@
+<div ng-controller="ShowCreatorController">
+
+    <h4>Username: {{ creatorDetails.username }}</h4>
+    <h4>Email: {{ creatorDetails.email }}</h4>
+    <h4>Joined: {{ creatorDetails.created_at.substring(0, 10) }}</h4>
+
+    <h2 class="text-center">Stories that is created by {{ creatorDetails.username }} </h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Place</th>
+            <th>Lat</th>
+            <th>Lon</th>
+            <th>Tags</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr data-ng-repeat="story in creatorDetails.stories track by $index">
+            <td>{{ story.title }}</td>
+            <td>{{ story.description }}</td>
+            <td>{{ story.address }}</td>
+            <td>{{ story.latitude}}</td>
+            <td>{{ story.longitude}}</td>
+            <td>
+                <span data-ng-repeat="(key, value) in story.tags">
+                    {{ value.name }}
+                </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

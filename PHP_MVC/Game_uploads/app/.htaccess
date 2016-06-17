@@ -1,0 +1,2 @@
+# Prevent access in folders like app
+Options -Indexes

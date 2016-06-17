@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid" ng-controller="LoginController">
+        <div class="navbar-header">
+            <a class="navbar-brand" data-ng-href=".">Home</a>
+            <a class="navbar-brand" data-ng-hide="!isUserLoggedIn()" data-ng-href="profile">Profile</a>
+        </div>
+        <a href="" class="navbar-brand float-right" data-ng-hide="!isUserLoggedIn()" ng-click="logout()" >Log Out</a>
+        <!--Login form-->
+        <form data-ng-hide="isUserLoggedIn()" data-ng-submit="login(data)" class="navbar-brand float-right">
+            <input type="email" ng-model="data.email" placeholder="Email"/>
+            <input type="password" ng-model="data.password" placeholder="Password" />
+            <button type="submit" class="btn btn-primary btn-sm">Login</button>
+        </form>
+        <!--Login form end-->
+    </div>
+
+</nav>

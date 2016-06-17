@@ -1,0 +1,28 @@
+body {margin:6px;}
+
+.story-map{
+    height: 600px;
+    width: 100%
+}
+
+.float-right{
+    float: right;
+}
+
+.info-window-text{
+    max-width: 300px;
+}
+
+.form-inline{
+    text-align: center;
+    padding: 6px;
+}
+
+.paginate{
+    cursor: pointer;
+    text-align: center;
+}
+
+.hover-link{
+    cursor: pointer;
+}

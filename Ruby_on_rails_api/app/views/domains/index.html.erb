@@ -1,0 +1,22 @@
+<% provide(:title, 'All domains') %>
+<h1>All domains</h1>
+
+<%= will_paginate @domains %>
+
+<ul class="users">
+  <% if current_user.admin? %>
+    <% @domains.each do |domain| %>
+        <li>
+          <b>User: </b><%= domain.user.username %>
+          <b>Domain: </b><%= domain.domain_name %>
+          <p>Created <%= time_ago_in_words(domain.created_at) %> ago
+
+                  | <%= link_to "delete", domain, method: :delete,
+                                data: { confirm: "You sure?" } %></p>
+
+        </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= will_paginate @domains %>

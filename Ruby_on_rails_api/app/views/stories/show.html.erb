@@ -1,0 +1,12 @@
+<% provide(:title, "Story") %>
+
+<h1><%= @story.title%></h1>
+<p><%= @story.description%></p>
+<p>Longitude: <%= @story.longitude%></p>
+<p>Latitude: <%= @story.latitude%></p>
+
+Posted <%= time_ago_in_words(@story.created_at) %> ago
+
+<% if @story.created_at != @story.updated_at %>
+/ Updated <%= time_ago_in_words(@story.updated_at) %> ago
+<% end %>

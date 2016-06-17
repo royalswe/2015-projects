@@ -1,0 +1,64 @@
+
+<!--Search form-->
+<form class="form-inline" data-ng-submit="stories.searchStories(data)">
+    <p> No fields in search are required. Ohps the fields are case sensitive</p>
+    <input class="form-control" type="text" data-ng-model="data.searches" placeholder="Search stories" >
+    <input class="form-control" type="number" data-ng-model="data.limit" placeholder="Limit nr of stories">
+    <!--<input class="form-control" type="text" data-ng-model="data.offset" placeholder="Offset" >-->
+    <input class="form-control" type="text" data-ng-model="data.tag" placeholder="Search tags" >
+    <input class="form-control" type="text" data-ng-model="data.location" placeholder="Limit location area" >
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!--Create new story form-->
+<form class="form-inline" ng-controller="LoginController" data-ng-hide="!isUserLoggedIn()" data-ng-submit="stories.createStory(data)">
+    <p>Create your unnecessary short story and it will be added to the map</p>
+    <input class="form-control" type="text" data-ng-model="data.title" minlength="2" maxlength="30" required placeholder="Title (required)" >
+    <input class="form-control" type="text" data-ng-model="data.description" minlength="2" maxlength="200" required placeholder="Story (required)">
+    <input class="form-control" type="text" data-ng-model="data.address" placeholder="Place (generate lat, lon)">
+    <input class="form-control" type="number" step="any" data-ng-model="data.latitude" placeholder="Latitude (optional)">
+    <input class="form-control" type="number" step="any" data-ng-model="data.longitude" placeholder="Longitude (optional)">
+    <input class="form-control" type="text" data-ng-model="data.tags" placeholder="Tags (optional)">
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<!--The map directive-->
+<story-map></story-map>
+
+<h3>List all unnecessary stories</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Place</th>
+            <th>Lat</th>
+            <th>Lon</th>
+            <th>Tag</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="story in stories.storyList track by $index">
+            <td>{{ story.title }}</td>
+            <td>{{ story.description }}</td>
+            <td>{{ story.address }}</td>
+            <td>{{ story.latitude}}</td>
+            <td>{{ story.longitude}}</td>
+            <td>
+                <span data-ng-repeat="(key, value) in story.tags">
+                    {{ value.name }}
+                </span>
+            </td>
+            <td><a data-ng-href="users/{{story.creator.username}}">Creator info</a></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="paginate">
+    <!--if previous page is available then show it-->
+    <a ng-if="stories.storyList[0].previous_page" data-ng-click="paginate(stories.storyList[0].previous_page)"><< Previous page</a>
+    <!--if next page is available then show it-->
+    <a ng-if="stories.storyList[0].next_page" data-ng-click="paginate(stories.storyList[0].next_page)">Next page >></a>
+</div>

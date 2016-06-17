@@ -1,0 +1,29 @@
+<% provide(:title, @user.username) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h1>
+    </section>
+
+    <% if current_user?(@user) %>
+      <%= link_to "create new story", new_story_path %>
+    <% end %>
+  </aside>
+
+    <div class="col-md-12">
+      <%= will_paginate @stories %>
+      <% if @user.stories.any? %>
+        <h3>Stories (<%= @user.stories.count %>)</h3>
+        <ol class="stories">
+          <%= render @stories %>
+        </ol>
+
+      <% end %>
+  </div>
+  
+</div>
+
+<%= will_paginate @stories  %>

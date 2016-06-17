@@ -1,0 +1,34 @@
+<h1>Edit story</h1>
+
+<%= form_for @story do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="text_field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="text_area">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="text_field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="text_field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="text_field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="tag_field">
+    <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit "Update" %>
+  </div>
+  
+  <% end %>

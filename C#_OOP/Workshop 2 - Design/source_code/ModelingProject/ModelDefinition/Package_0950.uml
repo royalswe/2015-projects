@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="21560e44-7531-4b8d-9b83-d4d28747a4e6"
+  name="Workshop_2"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4ff88632-9c74-4fe1-8d4d-04f60d2ffba5"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWorkshop_2"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="825008ad-8507-488e-a469-9e86d8d6458c"
+        LastKnownName="Controller"
+        LastKnownLocation="Package_0951.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b7c63b51-a967-4289-8f0c-16d0caea41e4"
+        LastKnownName="View"
+        LastKnownLocation="Package1_0951.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1b8889f5-30e9-4f75-93d0-871550fe7efe"
+        LastKnownName="Model"
+        LastKnownLocation="Package2_0951.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

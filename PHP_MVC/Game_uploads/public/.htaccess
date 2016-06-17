@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+# Where routing starts, add directory path if required
+RewriteBase /game/public
+# Dont rewrite a gameFile name
+RewriteCond %{REQUEST_FILENAME} !-f
+# Dont rewrite a gameFile directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# This is where my REQUEST comes in
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
