@@ -1,0 +1,32 @@
+﻿@model NumberGuessingGame.Models.GuessViewModel
+        
+    @{int i = 0; }
+    <ul>
+        @foreach (var guess in Model.secretNumber.GuessedNumbers)
+            {
+                i++;
+        <li class="guess_table">
+            <div>@i</div>
+            @if(guess.Outcome == NumberGuessingGame.Models.Outcome.High)
+            {
+                <p>&#8593;</p>
+                <p>@guess.Number</p>      
+            }
+            else if (guess.Outcome == NumberGuessingGame.Models.Outcome.Low)
+            {
+                <p>@guess.Number</p>
+                <p>&#8595;</p>
+            }
+            else if (guess.Outcome == NumberGuessingGame.Models.Outcome.Right)
+            {
+                <p>v</p>
+                <p>@guess.Number</p>
+            }       
+            
+            
+
+        </li>
+        
+        }
+    </ul>
+

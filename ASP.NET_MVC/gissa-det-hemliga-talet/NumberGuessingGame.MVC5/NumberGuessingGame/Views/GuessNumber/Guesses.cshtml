@@ -1,0 +1,29 @@
+﻿@model NumberGuessingGame.Models.GuessViewModel
+
+@Html.Partial("~/Views/GuessNumber/Index.cshtml")
+
+    <div> 
+
+        @{var nr = Model.secretNumber.LastGuessedNumber.Number;}
+
+        @{
+            switch (Model.secretNumber.LastGuessedNumber.Outcome.ToString())
+            {
+                case "Low":
+                        <p>@nr är för lågt</p>                 
+                    break;
+                case "High":
+                        <p>@nr är för högt</p>
+                    break;
+                case "OldGuess":
+                    <p>Du har redan gissat på talet @nr!</p>
+                    break;
+                default:
+                        <p>Vad syssla du med</p>
+                    break;
+            }
+        }
+
+    </div>
+
+@Html.Partial("~/Views/GuessNumber/GuessHistory.cshtml")

@@ -1,0 +1,53 @@
+﻿@model NumberGuessingGame.Models.GuessViewModel
+
+@{
+
+    if (Model == null)
+    {
+        <h2>Första gissningen</h2>
+    }
+    else
+    {
+        if (Model.secretNumber.LastGuessedNumber.Outcome == NumberGuessingGame.Models.Outcome.Right)
+        {
+            <h2>Rätt gissat!</h2>
+            <p>Grattis du klarade det på @Model.secretNumber.Count försök</p>
+        }
+        else if (Model.secretNumber.LastGuessedNumber.Outcome == NumberGuessingGame.Models.Outcome.NoMoreGuesses)
+        {
+            <h2>Inga fler gissningar</h2>
+            <p>Inga fler gissningar! Det hemliga talet var @Model.secretNumber.Number</p>
+        }
+        else
+        {
+            switch (Model.secretNumber.GuessedNumbers.Count)
+            {
+                case 1:
+                    <h2>Andra gissningen</h2>
+                    break;
+                case 2:
+                    <h2>Tredje gissningen</h2>
+                    break;
+                case 3:
+                    <h2>Fjärde gissningen</h2>
+                    break;
+                case 4:
+                    <h2>Femte gissningen</h2>
+                    break;
+                case 5:
+                    <h2>Sjätte gissningen</h2>
+                    break;
+                case 6:
+                    <h2>Sjunde gissningen</h2>
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+
+}
+
+
+

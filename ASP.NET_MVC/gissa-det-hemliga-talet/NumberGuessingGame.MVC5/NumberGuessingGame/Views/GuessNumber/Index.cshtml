@@ -1,0 +1,15 @@
+﻿@model NumberGuessingGame.Models.GuessViewModel
+
+
+@Html.Partial("~/Views/GuessNumber/Header.cshtml")
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.LabelFor(m => m.NewNumber, "Gissa ett tal mellan 1 och 100: ")
+        @Html.EditorFor(m => m.NewNumber)
+    </div>
+    <button type="submit" class="btn btn-default">Skicka gissning</button>
+}
