@@ -1,4 +1,3 @@
-Länk till demonstrations film https://www.screenmailer.com/v/PUznBbaJ06PR8eU
 
 Länk till applikationen http://vhost9.lnu.se:20081/1dv409/rn222cx (OBS krävs anslutning till Falken)
 
@@ -6,10 +5,6 @@ Länk till applikationen http://vhost9.lnu.se:20081/1dv409/rn222cx (OBS krävs a
 
 Projektet är en väderapplikation som kan söka upp väderprognoser i hela världen med hjälp av API:erna från GeoNames.com samt openWeatherMap.com.
 Applikationen fungerar på så sätt att användaren söker på en plats och får upp matchande platser i en lista. Vid val av plats/ort kommer en sida att visa en femdygnsprognos över den valda lokaliteten.
-
-Jag valde att göra en väderapplikation då det fanns möjlighet att bygga vidare på det rekommenderade projektet i den parallella kursen, 1DV409.
-
-Det finns väldigt många liknande applikationer och det är kanske inte så konstigt med tanke på att flera av dem har någon form av API som man kan använda sig av, och som gör det enkelt att skapa sin egen väderapplikation. 
 
 ### Teknik
 
@@ -47,13 +42,3 @@ Med hjälp av jQuery pluginet Checknet som pingar applikationen med jämna mella
 
 Applikationen förlitar sig helt på att API:ernas struktur och användningsvillkor förblir oförändrade.
 
-### Egen reflektion kring projektet
-
-Som helhet har projektet gått bra och jag har till största del fått den hjälp jag behöver genom att praktiskt tillämpa den teori vi har fått lära oss i den parallella kursen.
-Att använda sig av appcache samt localstorage var förvånansvärt enkelt, jag hade räknat med att det skulle vara mer kod att implementera.
-Jag har haft en del svårigheter med att läsa ut data från API:erna samt att hantera vissa förändringar som sker i API:ets data. Det har varit lite problematiskt med appcache då den cachar allt och det har skapat vissa problem. Det har t.ex. cachat token value i post formuläret. Dessutom pingar funktionen med Checknet den  cachade sidan vilket gör att pingen alltid får status 200 när man är offline. 
-Jag tycker projektet har varit väldigt utvecklande och har fått lära mig många nya tekniker. 
-Offline-first är något helt nytt för mig och jag kommer definitivt att använda mig av det i mina nästkommande projekt om det är tillämpligt. 
-Som vanligt fungerar applikationen problemfritt lokalt men dessvärre inte vid publicering, detta har dock inte varit några större problem eftersom det beskrivande felmeddelandet har gjort det lätt att åtgärda problemen.
-
-Jag kommer inte fortsätta med projektet då det finns väldigt många liknander applikationer och jag hade säkerligen gjort något annat om jag inte hade brist på ideer eller börjat tänka på det tidigare.
