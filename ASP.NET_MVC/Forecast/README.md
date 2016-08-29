@@ -1,6 +1,6 @@
 
 
-Länk till applikationen http://vhost9.lnu.se:20081/1dv409/rn222cx
+Demo: http://vhost9.lnu.se:20081/1dv409/rn222cx
 
 ### Inledning
 
